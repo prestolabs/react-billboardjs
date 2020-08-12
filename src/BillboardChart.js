@@ -39,13 +39,13 @@ const [MAJOR_VERSION, MINOR_VERSION] = React.version
   .map((section) => parseInt(section, 10));
 
 const COMPONENT_WILL_UPDATE_NAME =
-  MAJOR_VERSION >= 16 && MINOR_VERSION >= 3 ? 'UNSAFE_componentWillUpdate' : 'componentWillUpdate';
+  (MAJOR_VERSION >= 16 && MINOR_VERSION >= 3) || MAJOR_VERSION >= 17 ? 'UNSAFE_componentWillUpdate' : 'componentWillUpdate';
 
-/** 
- * @function componentDidMount 
- * 
- * @description 
- * on mount, update the chart based on props 
+/**
+ * @function componentDidMount
+ *
+ * @description
+ * on mount, update the chart based on props
  +
  * @param {Object} props the props passed to the component
  * @param {function} updateChart the method to update the chart
