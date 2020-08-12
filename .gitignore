@@ -3,6 +3,4 @@
 .nyc_output
 coverage
 dist
-es
-lib
 node_modules
